@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Text box</title>
+</head>
+<body>
+	<h1 align="center" class="heading">TEXT BOX</h1>
+	<div class="container" align="center">
+		<form class="textboxform">
+
+			<link rel="stylesheet" type="text/css" href="textStyle.css">
+
+
+			<label>Enter your text below</label>
+			<br><br>
+			<textarea id="text" rows="10" cols="70"onkeyup="updateInfo()" autofocus></textarea><br><br>
+			<button type="button" onclick="transformUpperCase()">UpperCase</button>
+			<button type="button" onclick="transformLowerCase()">LowerCase</button>
+			<button type="button" onclick="findtext()">FIND</button>
+			<button type="button" onclick="changeColor()">change color</button>
+			<button type="button" onclick="textUnderline()">underline</button>
+			<button type="button" onclick="copyText()">CopyTEXT</button>
+			<br><br>
+			<h2 id="textinfo">This text contains 0  words and 0 characters</h2>
+		</form>
+	</div>
+	<script type="text/javascript">
+		let text =document.getElementById("text");
+		let textInfo =document.getElementById("textInfo");
+		let clr;
+
+		function transformUpperCase(){
+			text.value = text.value.toUpperCase();
+
+		}
+		function transformLowerCase(){
+			text.value = text.value.toLowercase();
+
+		}
+
+		function findText(){
+			let searchText = prompt("enter the text :");
+			if(text.value.includes"$(searchText)" is present);
+		{
+			alert(search text "${searchText}" is present);
+		}else {
+			alert(search text "${searchText}" is not present);
+
+		}
+		}
+		
+		function changeColor(){
+			clr  = prompt(("enter your fav color :")toLowercase())
+			text.style.color=clr;
+
+		}
+		function textUnderline(){
+			text.style.textDecoration = underline 2px solid ${clr}
+
+		}
+
+		function copytext(){
+			navigator.clipboard.writeText(text.value)
+		}
+
+		function updateInfo(){
+			let numberofWords = text.value.trim().split("").length
+
+			textInfo.innerHTML =` This text contains ${numberofwords}words and ${text.value.length}charcters`
+		}
+	</script>
+</body>
+</html>
